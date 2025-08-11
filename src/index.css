@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-primary: 'League Spartan', sans-serif;
+  --font-secondary: 'Poppins', sans-serif;
+}
+
+/* Smooth scroll and hide scrollbars across browsers */
+html { scroll-behavior: smooth; }
+html, body { -ms-overflow-style: none; scrollbar-width: none; }
+html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
+
+body { font-family: var(--font-secondary); }
+
+/* Marquee and Ken Burns animations */
+@keyframes marquee-ltr {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0%); }
+}
+.animate-marquee-ltr {
+  animation: marquee-ltr 26s linear infinite;
+}
+
+/* Seamless 3x strip: move by one third so edges match */
+@keyframes marquee-ltr-3 {
+  0% { transform: translateX(-33.3333%); }
+  100% { transform: translateX(0%); }
+}
+.animate-marquee-ltr-3 {
+  animation: marquee-ltr-3 30s linear infinite;
+}
+
+@keyframes kenburns {
+  0% { transform: scale(1.05) translate(-2%, -2%); }
+  50% { transform: scale(1.12) translate(2%, 0%); }
+  100% { transform: scale(1.05) translate(-2%, -2%); }
+}
+.animate-kenburns {
+  animation: kenburns 10s ease-in-out infinite alternate;
+}
