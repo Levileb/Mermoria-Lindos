@@ -1,16 +1,46 @@
 import React, { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 
-const IMAGES = [
-  '/images/about1.jpg',
-  '/images/about2.jpg',
-  '/images/about3.jpg',
-  '/images/about4.jpg',
-  '/images/about5.jpg',
-  '/images/about6.jpg',
-  '/images/about7.jpg',
-  '/images/about8.jpg',
-]
+function shuffle(array) {
+  let currentIndex = array.length, randomIndex;
+  while (currentIndex !== 0) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+    [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+  }
+  return array;
+}
+const IMAGES = shuffle([
+  // Birthday
+  '/images/birthday/services-birthday-1.jpg',
+  '/images/birthday/services-birthday-2.jpg',
+  '/images/birthday/services-birthday-3.jpg',
+  '/images/birthday/services-birthday-4.jpg',
+  '/images/birthday/services-birthday-5.jpg',
+  '/images/birthday/services-birthday-6.jpeg',
+  '/images/birthday/services-birthday-7.jpg',
+  // Graduation
+  '/images/graduation/services-graduation-1.jpg',
+  '/images/graduation/services-graduation-2.jpg',
+  '/images/graduation/services-graduation-3.jpg',
+  '/images/graduation/services-graduation-4.jpg',
+  '/images/graduation/services-graduation-5.jpg',
+  '/images/graduation/services-graduation-6.jpg',
+  '/images/graduation/services-graduation-7.jpg',
+  '/images/graduation/services-graduation-8.jpg',
+  '/images/graduation/services-graduation-9.jpg',
+  '/images/graduation/services-graduation-10.jpg',
+  // Wedding
+  '/images/wedding/services-weddings-1.jpg',
+  '/images/wedding/services-weddings-2.jpg',
+  '/images/wedding/services-weddings-3.png',
+  '/images/wedding/services-weddings-4.jpg',
+  '/images/wedding/services-weddings-5.jpg',
+  '/images/wedding/services-weddings-6.jpg',
+  '/images/wedding/services-weddings-7.jpg',
+  '/images/wedding/services-weddings-8.jpg',
+  '/images/wedding/services-weddings-9.jpg',
+])
 
 export default function About(){
   const items = [...IMAGES, ...IMAGES, ...IMAGES] // triple for seamless loop
